@@ -37,14 +37,14 @@
 <body class="dashboard-page sb-l-o sb-r-c">
 
     <!-- Start: Theme Preview Pane -->
-    <?php include ("templates/skinbar.php"); ?>
+    @include('Pages.backoffice.templates.skinbar')
     <!-- End: Theme Preview Pane -->
 
     <!-- Start: Main -->
     <div id="main">
 
         <!-- Start: Header -->
-        <?php include_once ("templates/header.php"); ?>
+        @include('Pages.backoffice.templates.header')
         <!-- End: Header -->
 
         <!-- Start: Sidebar -->
@@ -56,8 +56,8 @@
                 <!-- End: Sidebar Header -->
 
                 <!-- sidebar menu -->
-                <?php include_once ("templates/left-sidebar.php"); ?>
-     
+
+                @include('Pages.backoffice.templates.left-sidebar')
 
             </div>
         </aside>
@@ -66,11 +66,13 @@
         <section id="content_wrapper">
 
             <!-- Start: Topbar-Dropdown -->
-            <?php include_once ("templates/top-dropdown.php"); ?>
+
+            @include('Pages.backoffice.templates.top-dropdown')
             <!-- End: Topbar-Dropdown -->
 
             <!-- Start: Topbar -->
-			<?php include_once ("templates/top-breadcumb.php"); ?>
+            @include('Pages.backoffice.templates.top-breadcumb')
+
             <!-- End: Topbar -->
 
             <!-- Begin: Content -->

@@ -14,10 +14,10 @@ class BackendController extends Controller
     }
 
     public function NewCategory(){
-        return view('Pages.index');
+        return view('Pages.backoffice.');
     }
 
     public function ChangeSlider(){
-        return view('Pages.index');
+        return view('Pages.backoffice.index');
     }
 }

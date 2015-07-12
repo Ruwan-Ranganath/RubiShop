@@ -35,6 +35,7 @@
 
     <!-- Start: Theme Preview Pane -->
     <?php include ("templates/skinbar.php"); ?>
+
     <!-- End: Theme Preview Pane -->
 
     <!-- Start: Main -->
