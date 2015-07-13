@@ -20,4 +20,12 @@ class FrontendController extends Controller
     public function home(){
         return view('Pages.index');
     }
+
+    public function login(){
+        return view('backoffice.login');
+    }
+
+    public function admin(){
+        return view('backoffice.dashboard');
+    }
 }
