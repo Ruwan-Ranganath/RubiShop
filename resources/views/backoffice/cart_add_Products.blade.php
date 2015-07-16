@@ -79,16 +79,16 @@
                         <div class="col-md-11">
 
                     <!-- create new order panel -->
-                        {!! Form::open(['url'=>'Admin/create'])!!}
+                        {!! Form::open(['url'=>'Procreate'])!!}
 
                             <div class="form-group">
-                                {!! Form::text('product_title',null,['placeholder'=>'Product Title','class'=>'form-control']) !!}
+                                {!! Form::text('product_name',null,['placeholder'=>'Product Title','class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
-                                {!! Form::text('Product_discription',null,['placeholder'=>'Product Discription','class'=>'form-control']) !!}
+                                {!! Form::text('product_description',null,['placeholder'=>'Product Description','class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
-                                {!! Form::text('Product_price',null,['placeholder'=>'Price','class'=>'form-control']) !!}                            </div>
+                                {!! Form::text('price',null,['placeholder'=>'Price','class'=>'form-control']) !!}                            </div>
                             <div class="form-group">
                                 {!! Form::text('promo_price',null,['placeholder'=>'Promo Price','class'=>'form-control']) !!}
                             </div>
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-7 pr5">
-                                            <input type="text" name="name2" id="name2" class="text-center event-name gui-input br-light bg-light" placeholder="Img Keywords">
+                                            <input type="text" name="image1" id="image1" class="text-center event-name gui-input br-light bg-light" placeholder="Img Keywords">
                                             <label for="name2" class="field-icon"></label>
                                         </div>
                                         <div class="col-xs-5">
@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-7 pr5">
-                                            <input type="text" name="name2" id="name2" class="text-center event-name gui-input br-light bg-light" placeholder="Img Keywords">
+                                            <input type="text" name="image2" id="image2" class="text-center event-name gui-input br-light bg-light" placeholder="Img Keywords">
                                             <label for="name2" class="field-icon"></label>
                                         </div>
                                         <div class="col-xs-5">
@@ -147,7 +147,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-7 pr5">
-                                            <input type="text" name="name2" id="name2" class="text-center event-name gui-input br-light bg-light" placeholder="Img Keywords">
+                                            <input type="text" name="image3" id="image3" class="text-center event-name gui-input br-light bg-light" placeholder="Img Keywords">
                                             <label for="name2" class="field-icon"></label>
                                         </div>
                                         <div class="col-xs-5">
@@ -164,7 +164,7 @@
                             <div class="form-group">
                                 <label for="">Product Category</label>
                                 <br/>
-                                <select id="category"  data-no-selected="Nothing selected" name="multiple[]" multiple="multiple" >
+                                <select id="product_category" name="product_category" data-no-selected="Nothing selected" name="multiple[]" multiple="multiple" >
                                     <option value="1">1</option>
                                     <option value="1">2</option>
                                     <option value="1">3</option>

@@ -27,3 +27,5 @@ Route::get('cart-settings', 'adminController@cart_Settings');
 Route::get('view-products', 'adminController@view_product');
 Route::get('view-orders', 'adminController@view_orders');
 Route::get('view-customers', 'adminController@cart_customers');
+
+Route::post('Procreate','adminController@product_create');

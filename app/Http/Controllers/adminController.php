@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\product;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class adminController extends Controller
 {
@@ -45,5 +44,15 @@ class adminController extends Controller
         return view('backoffice.cart_customers');
     }
 
+    /**
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function product_create(){
+
+//        product::create(Request::all());
+//        return redirect('add-product');
+        $Product=product::all();
+        return $Product;
+    }
 
 }
