@@ -79,7 +79,7 @@
                         <div class="col-md-11">
 
                     <!-- create new order panel -->
-                        {!! Form::open(['url'=>'Procreate'])!!}
+                        {!! Form::open(['url'=>'Procreate','files'=>true])!!}
 
                             <div class="form-group">
                                 {!! Form::text('product_name',null,['placeholder'=>'Product Title','class'=>'form-control']) !!}
@@ -106,8 +106,9 @@
                                         </div>
                                         <div class="col-xs-5">
                                                         <span class="button btn-system btn-file btn-block">
-                                                            <span class="fileupload-new">Select</span>
-                                                        <span class="fileupload-exists">Change</span>
+                                                            {!! Form::file('image', null) !!}
+                                                            {{--<span class="fileupload-new">Select</span>--}}
+                                                        {{--<span class="fileupload-exists">Change</span>--}}
                                                         <input type="file">
                                                         </span>
                                         </div>

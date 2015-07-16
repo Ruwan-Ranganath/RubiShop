@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\product;
 
 use App\Http\Requests;
@@ -45,14 +46,15 @@ class adminController extends Controller
     }
 
     /**
+     * @param ProductRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function product_create(){
+    public function product_create(ProductRequest $request){
 
 //        product::create(Request::all());
-//        return redirect('add-product');
-        $Product=product::all();
-        return $Product;
+//
+        product::create($request->all());
+        return redirect('add-product');
     }
 
 }
