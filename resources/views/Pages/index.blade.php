@@ -49,80 +49,57 @@
     <div class="container">
       <h1 class="heading1"><span class="maintext">Featured Products</span><span class="subtext"> See Our Most featured Products</span></h1>
       <ul class="thumbnails">
+
+      <?php //login.php
+      $db_hostname = '127.0.0.1';
+      $db_database = 'rubishop';
+      $db_username = 'root';
+      $db_password = '';
+
+      // Connect to server.
+      $conn = mysqli_connect($db_hostname, $db_username, $db_password, $db_database)
+      or die("Unable to connect to MySQL: " . mysqli_error());
+
+      $sql = 'SELECT id,product_name, price, image1, promo_price FROM products ORDER BY id DESC LIMIT 4';
+      $result = mysqli_query($conn, $sql);
+
+      if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while($row = mysqli_fetch_assoc($result)) {
+          
+
+?>
+
+
         <li class="span3">
-          <a class="prdocutname" href="product.html">Product Name Here</a>
+          <a class="prdocutname" href="product.html"><?php echo $row["product_name"]; ?></a>
           <div class="thumbnail">
             <span class="sale tooltip-test">Sale</span>
             <a href="#"><img alt="" src="img/product1.jpg"></a>
-            <div class="shortlinks">
-              <a class="details" href="#">DETAILS</a>
-              <a class="wishlist" href="#">WISHLIST</a>
-              <a class="compare" href="#">COMPARE</a>
-            </div>
+
             <div class="pricetag">
               <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
               <div class="price">
-                <div class="pricenew">$4459.00</div>
-                <div class="priceold">$5000.00</div>
+                <div class="pricenew"><?php echo $row["price"]; ?></div>
+                <div class="priceold"><?php echo $row["promo_price"]; ?></div>
               </div>
             </div>
           </div>
         </li>
-        <li class="span3">
-          <a class="prdocutname" href="product.html">Product Name Here</a>
-          <div class="thumbnail">
-            <a href="#"><img alt="" src="img/product2.jpg"></a>
-            <div class="shortlinks">
-              <a class="details" href="#">DETAILS</a>
-              <a class="wishlist" href="#">WISHLIST</a>
-              <a class="compare" href="#">COMPARE</a>
-            </div>
-            <div class="pricetag">
-              <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-              <div class="price">
-                <div class="pricenew">$4459.00</div>
-                <div class="priceold">$5000.00</div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="span3">
-          <a class="prdocutname" href="product.html">Product Name Here</a>
-          <div class="thumbnail">
-            <span class="offer tooltip-test" >Offer</span>
-            <a href="#"><img alt="" src="img/product1.jpg"></a>
-            <div class="shortlinks">
-              <a class="details" href="#">DETAILS</a>
-              <a class="wishlist" href="#">WISHLIST</a>
-              <a class="compare" href="#">COMPARE</a>
-            </div>
-            <div class="pricetag">
-              <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-              <div class="price">
-                <div class="pricenew">$4459.00</div>
-                <div class="priceold">$5000.00</div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="span3">
-          <a class="prdocutname" href="product.html">Product Name Here</a>
-          <div class="thumbnail">
-            <a href="#"><img alt="" src="img/product2.jpg"></a>
-            <div class="shortlinks">
-              <a class="details" href="#">DETAILS</a>
-              <a class="wishlist" href="#">WISHLIST</a>
-              <a class="compare" href="#">COMPARE</a>
-            </div>
-            <div class="pricetag">
-              <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-              <div class="price">
-                <div class="pricenew">$4459.00</div>
-                <div class="priceold">$5000.00</div>
-              </div>
-            </div>
-          </div>
-        </li>
+
+
+  
+
+  <?php
+        }
+      } else {
+        echo "0 results";
+      }
+
+      mysqli_close($conn);
+
+
+   ?>
       </ul>
     </div>
   </section>
